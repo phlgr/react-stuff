@@ -7,12 +7,12 @@ type ButtonProps = {
 };
 
 function Button({ children }: ButtonProps): JSX.Element {
-  return <YellowButton>{children}</YellowButton>;
+  return <StyledButton>{children}</StyledButton>;
 }
 
 export default Button;
 
-const YellowButton = styled.button`
+const StyledButton = styled.button`
   color: #000;
   background: linear-gradient(180deg, #ffbb3b, #ffa90a);
   font-size: 0.8em;
