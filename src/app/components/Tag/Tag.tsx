@@ -1,10 +1,10 @@
-import type { ReactNode } from 'react';
-import React from 'react';
+import styled from 'styled-components';
 
-type TagProps = {
-  children: ReactNode;
-};
+const Tag = styled.span`
+  color: white;
+  border-radius: 1em;
+  padding: 0.5em 1em;
+  background-color: #fa5252;
+`;
 
-export default function Tag({ children }: TagProps): JSX.Element {
-  return <span>{children}</span>;
-}
+export default Tag;
