@@ -3,21 +3,21 @@ import styled from 'styled-components';
 import Tag from '../Tag/Tag';
 
 type CardProps = {
-  content: {
-    name: string;
-    description: string;
-    categories?: string[];
-  };
+  name: string;
+  description: string;
+  categories?: string[];
 };
 
-export default function Card({ content }: CardProps): JSX.Element {
+export default function Card({
+  name,
+  description,
+  categories,
+}: CardProps): JSX.Element {
   return (
     <CardBody>
-      <h2>{content.name}</h2>
-      <p>{content.description}</p>
-      {content.categories?.map((category) => (
-        <Tag>{category}</Tag>
-      ))}
+      <h2>{name}</h2>
+      <p>{description}</p>
+      {categories && categories.map((category) => <Tag>{category}</Tag>)}
     </CardBody>
   );
 }
