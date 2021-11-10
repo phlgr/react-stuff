@@ -1,4 +1,5 @@
 import React from 'react';
+import styled from 'styled-components';
 
 type CardProps = {
   content: {
@@ -9,9 +10,15 @@ type CardProps = {
 
 export default function Card({ content }: CardProps): JSX.Element {
   return (
-    <article>
+    <CardBody>
       <h2>{content.name}</h2>
       <p>{content.description}</p>
-    </article>
+    </CardBody>
   );
 }
+
+const CardBody = styled.article`
+  padding: 1.5em;
+  border: 5px solid #c92a2a;
+  border-radius: 0.5em;
+`;
