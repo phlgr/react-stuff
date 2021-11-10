@@ -18,8 +18,15 @@ const exampleContentDetail = {
 };
 
 export const Regular = (): JSX.Element => (
-  <Card content={exampleContentRegular} />
+  <Card
+    name={exampleContentRegular.name}
+    description={exampleContentRegular.description}
+  />
 );
 export const Detail = (): JSX.Element => (
-  <Card content={exampleContentDetail} />
+  <Card
+    name={exampleContentDetail.name}
+    description={exampleContentDetail.description}
+    categories={exampleContentDetail.categories}
+  />
 );
