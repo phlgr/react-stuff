@@ -8,3 +8,6 @@ export default {
 
 export const Login = (): JSX.Element => <Button>Login</Button>;
 export const Register = (): JSX.Element => <Button>Register</Button>;
+export const Large = (): JSX.Element => (
+  <Button large={true}>Large Button</Button>
+);
