@@ -3,7 +3,7 @@ import Card from '../../components/Card/Card';
 import type { Thing } from '../../types';
 
 export default function Dashboard(): JSX.Element {
-  const [things, setThings] = useState<Thing[]>([]);
+  const [things, setThings] = useState<Thing[] | null>(null);
 
   useEffect(() => {
     async function fetchThings() {
@@ -21,7 +21,7 @@ export default function Dashboard(): JSX.Element {
   return (
     <main>
       <h1>Dashboard</h1>
-      {things.length >= 0 &&
+      {things &&
         things.map((thing) => (
           <Card name={thing.name} description={thing.description} />
         ))}
