@@ -14,16 +14,16 @@ export default function Dashboard(): JSX.Element {
     fetchThings();
   }, []);
 
-  useEffect(() => {
-    console.log('fetched things 🎉');
-  }, [things]);
-
   return (
     <main>
       <h1>Dashboard</h1>
       {things &&
         things.map((thing) => (
-          <Card name={thing.name} description={thing.description} />
+          <Card
+            key={thing.id}
+            name={thing.name}
+            description={thing.description}
+          />
         ))}
     </main>
   );
