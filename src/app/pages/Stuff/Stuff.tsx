@@ -1,15 +1,32 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
 import DetailCard from '../../components/DetailCard/DetailCard';
+import type { Thing } from '../../types';
 
 export default function Stuff(): JSX.Element {
-  const { thing } = useParams();
+  const [thing, setThing] = useState<null | Thing>(null);
+  const { thingID } = useParams();
+
+  useEffect(() => {
+    async function fetchThing() {
+      const response = await fetch(
+        `https://json-server.neuefische.de/stuff/${thingID}`
+      );
+      const newThing = await response.json();
+      setThing(newThing);
+    }
+    fetchThing();
+  }, []);
 
   return (
-    <DetailCard
-      name="Old Toothbrush"
-      description="You could use it to clean shoes"
-      categories={['toiletry', 'tool', 'every day use', 'plastic']}
-    />
+    <>
+      {thing && (
+        <DetailCard
+          name={thing.name}
+          description={thing.description}
+          categories={thing.categories}
+        />
+      )}
+    </>
   );
 }
