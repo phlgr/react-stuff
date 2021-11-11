@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import Tag from '../Tag/Tag';
 
@@ -15,7 +16,7 @@ export default function DetailCard({
 }: DetailCardProps): JSX.Element {
   return (
     <Card>
-      <Button>Back</Button>
+      <BackLink to={'/'}>Back</BackLink>
       <h2>{name}</h2>
       <Description>{description}</Description>
       <Categories>
@@ -35,7 +36,7 @@ const Card = styled.article`
   column-gap: 1rem;
 `;
 
-const Button = styled.button`
+const BackLink = styled(Link)`
   place-self: center;
 `;
 
