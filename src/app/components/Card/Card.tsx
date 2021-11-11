@@ -1,24 +1,16 @@
 import React from 'react';
 import styled from 'styled-components';
-import Tag from '../Tag/Tag';
 
 type CardProps = {
   name: string;
   description: string;
-  categories?: string[];
 };
 
-export default function Card({
-  name,
-  description,
-  categories,
-}: CardProps): JSX.Element {
+export default function Card({ name, description }: CardProps): JSX.Element {
   return (
     <CardBody>
       <h2>{name}</h2>
       <p>{description}</p>
-      {categories &&
-        categories.map((category) => <Tag key={category}>{category}</Tag>)}
     </CardBody>
   );
 }

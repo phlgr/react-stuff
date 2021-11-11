@@ -6,27 +6,11 @@ export default {
   component: Card,
 };
 
-const exampleContentRegular = {
+const exampleThing = {
   name: 'Old Toothbrush',
   description: 'You could use it to clean shoes',
-};
-
-const exampleContentDetail = {
-  name: 'Old Toothbrush',
-  description: 'You could use it to clean shoes',
-  categories: ['toiletry', 'tool', 'every day use', 'plastic'],
 };
 
 export const Regular = (): JSX.Element => (
-  <Card
-    name={exampleContentRegular.name}
-    description={exampleContentRegular.description}
-  />
-);
-export const Detail = (): JSX.Element => (
-  <Card
-    name={exampleContentDetail.name}
-    description={exampleContentDetail.description}
-    categories={exampleContentDetail.categories}
-  />
+  <Card name={exampleThing.name} description={exampleThing.description} />
 );
