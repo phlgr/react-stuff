@@ -7,23 +7,28 @@ type DetailCardProps = {
   name: string;
   description: string;
   categories: string[];
+  onDelete: () => void;
 };
 
 export default function DetailCard({
   name,
   description,
   categories,
+  onDelete,
 }: DetailCardProps): JSX.Element {
   return (
     <Card>
       <BackLink to={'/'}>Back</BackLink>
       <h2>{name}</h2>
       <Description>{description}</Description>
-      <Categories>
-        {categories.map((category) => (
-          <Tag key={category}>{category}</Tag>
-        ))}
-      </Categories>
+      {categories && (
+        <Categories>
+          {categories.map((category) => (
+            <Tag key={category}>{category}</Tag>
+          ))}
+        </Categories>
+      )}
+      <button onClick={onDelete}>Delete</button>
     </Card>
   );
 }
