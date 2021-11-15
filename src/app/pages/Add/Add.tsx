@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router';
 
 export default function Add(): JSX.Element {
+  const navigate = useNavigate();
   const [name, setName] = useState('');
   const [description, setDescription] = useState('');
 
@@ -13,6 +15,7 @@ export default function Add(): JSX.Element {
       },
       body: JSON.stringify({ name, description }),
     });
+    navigate('/');
   }
 
   return (
